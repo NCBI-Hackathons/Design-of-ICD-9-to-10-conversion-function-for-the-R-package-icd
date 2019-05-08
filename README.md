@@ -15,7 +15,7 @@ Difficulties: Differences in format of codes, specificity of codes, and one to m
 Limitation: GEM codes are currently only mapping ICD-9 diagnosis codes only (not procedure codes)
 
 # Software Flowchart
-![Flowchart](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/ICD_flowchart.png "Flowchart")
+![Flowchart](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/Updated%20flowchart.png "Flowchart")
 
 ## Workflow 
 Input: a) 2018_I9gem.txt (list of ICD-9 to ICD-10 gem mappings) and 2) your ICD-9 code(s) to be mapped.
