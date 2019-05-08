@@ -3,6 +3,7 @@
 ## This project aims to add components to the existing R icd package to aid research using ICD codes.
 
 # Flowchart for project
+![Flowchart](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/ICD_flowchart.png "Flowchart")
 
 Using 2018 ICD-9 GEM mapping from CMS which provides broad mapping of ICD-9 to ICD-10 along with a set of five flags that specify the mapping of the data. 
 Difficulties include differences in format of codes, specificity of codes, and one to many mapping
