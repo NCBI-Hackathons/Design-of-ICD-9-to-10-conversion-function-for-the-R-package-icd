@@ -1,4 +1,4 @@
-# Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd
+# R function to convert International Classification of Diseases codes from Ninth to Tenth revisions (ICD-9 to ICD-10)
 
 ## Project goals: Add components to the existing R icd package to aid research using ICD codes by developing a function to convert between older ICD-9 codes and new ICD-10 codes.
 
