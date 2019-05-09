@@ -22,11 +22,11 @@ Input: a) 2018_I9gem.txt (list of ICD-9 to ICD-10 gem mappings) and 2) your ICD-
 
 Step 1: Data cleaning/processing:
 
-    Step 1a: Determine if codes being mapped are in ICD-9 or ICD-10. Take only the ICD-9 subset
+    Step 1a: Determine if codes being mapped are in ICD-9 or ICD-10. Take only the ICD-9 subset.
 
-    Step 1b: Determine if are in short or decimal format
+    Step 1b: Determine if ICD-9 codes are in short or decimal format
 
-    Step 1c: Convert all codes to short format
+    Step 1c: Convert all codes to short format.
 
 Step 2: Using GEM, function converts ICD-9 to ICD-10. 
 
