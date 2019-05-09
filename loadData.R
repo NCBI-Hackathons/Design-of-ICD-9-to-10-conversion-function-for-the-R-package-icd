@@ -1,11 +1,15 @@
-install.packages(tidyverse)
 
 ## Load the codes
-D <- read.table("/cloud/project/2018_I9gem.txt", 
-                quote="\"", comment.char="", 
-                stringsAsFactors=FALSE)
+GEM <- read.table("2018_I9gem.txt",
+           colClasses = "character",
+           col.names = c("ICD9", "ICD10", "flag"))
+
+# Extracting flags 
+for (i in 1:5){
+  colNames <- c('approximate','noMap','combination','scenario','choicelist')
+  test[,i+3] <- as.integer(substring(test[,3],i,i))
+  names(test)[i+3] <- colNames[i]
+}
 
 
-## Updating the column names so that we know which
-## is which
-colnames(D) <- c("ICD9", "ICD10", "flag")
+
