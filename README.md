@@ -41,5 +41,5 @@ Step 3: ICD-10 has many more codes than ICD-9 and the GEM map prioritizes based 
     
     Step 3b: Following ICD-10 conversion, pull up all potential children codes (more specific) from the GEM-specified parent code (less specific). 
 
-    Step 3b: Also based on flags, give the correct combinations of ICD-10 codes that are relevent.
+    Step 3c: Also based on flags, give the correct combinations of ICD-10 codes that are relevent.
 
