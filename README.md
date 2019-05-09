@@ -23,7 +23,7 @@ Using 2018 ICD-9 GEM mapping from CMS (https://www.cms.gov/Medicare/Coding/ICD10
 # Software Flowchart
 ![Flowchart](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/Updated_Flowchart.png "Flowchart")
 
-## Workflow 
+### Workflow 
 Required packages: ```icd``` (https://github.com/jackwasey/icd)
 
 Required inputs: a) GEM.Rds (list of ICD-9 to ICD-10 gem mappings) and 2) dataset with your ICD-9 code(s) in a column to be mapped.
@@ -48,3 +48,6 @@ Step 3: ICD-10 has many more codes than ICD-9 and the GEM map prioritizes based 
 
     Step 3c: Also based on flags, give the correct combinations of ICD-10 codes that are relevent.
 
+### Lessons Learned
+
+We need to distinguish between multiple data versions (ICD-9 vs. 10) as well as multiple data formats (short vs. decimal). However, many of the built-in functions are not set up for vectorization, which means the code may run slowly. We have tried to optimize our functions while still including to ability to check which data version and format and also convert based on a logical structure. In the future, use of tidyverse packages as well as parallelization would improve performance in larger datasets.
