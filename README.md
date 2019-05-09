@@ -24,7 +24,7 @@ Step 1: Data cleaning/processing:
 
     Step 1a: Determine if codes being mapped are in ICD-9 or ICD-10. Take only the ICD-9 subset.
 
-    Step 1b: Determine if ICD-9 codes are in short or decimal format
+    Step 1b: Determine if ICD-9 codes are in short or decimal format.
 
     Step 1c: Convert all codes to short format.
 
