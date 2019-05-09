@@ -7,7 +7,7 @@
 convertICD9toICD10 <- function(icd) {
   icd.version <- guess_version(icd)
   
-                                                      # check whether it's icd9 or icd10
+# check whether it's icd9 or icd10
   if (icd.version == "icd9") {                        # check if it's "icd9"
     #print("OK!")
     #return(icd)
