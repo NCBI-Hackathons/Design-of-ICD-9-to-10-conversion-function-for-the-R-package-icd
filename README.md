@@ -1,8 +1,14 @@
-# R function to convert International Classification of Diseases codes from Ninth to Tenth revisions (ICD-9 to ICD-10)
+# R function to convert ICD-9 to ICD-10
 
-## Project goals: Add components to the existing R icd package to aid research using ICD codes by developing a function to convert between older ICD-9 codes and new ICD-10 codes.
+## Project goals: Develop a function to be incorporated into the R package 'icd' that will convert International Classification of Diseases codes from Ninth to Tenth revisions
 
-Authors: Emily Ricotta (team lead), Sofia Fernandez Lozano (sys admin), Denise Liberton (writer), Gwynn Sturdevant, Regina Umarova, Elaine Lai
+    Authors: 
+    - Emily Ricotta (Team Lead, emily.ricotta@nih.gov)
+    - Sofia Fernandez Lozano (SysAdmin, so1.618e@gmail.com)
+    - Denise Liberton (Writer, denise.liberton@nih.gov)
+    - Gwynn Sturdevant (nzgwynn@gmail.com)
+    - Regina Umarova (regina.umarova@nih.gov)
+    - Elaine Lai (elaine.lai@nih.gov)
 
 ### Introduction
 The International Statistical Classification of Diseases and Related Health Problems (ICD) is a medical classification list by the World Health Organization (WHO) used around the world. Every medical visit is associated with one or more ICD codes. ICD codes are regularly used by medical billing, insurance, and epidemiologists to track and evaluate diseases and health problems across the world.  
@@ -12,28 +18,27 @@ In 2015, the United States transitioned from the 9th revision (ICD-9) to the 10t
 This means that legacy datasets have ICD codes in one format while post-2015 data is coded differently. Being able to easily convert between these two ICD systems will allow for easy combination and analysis of these datasets. We propose to perform this conversion using General Equivalence Mappings (GEMs) proposed by the Centers for Medicare & Medicaid Services (CMS).
 
 ### Project Goals
-Using 2018 ICD-9 GEM mapping from CMS which provides broad mapping of ICD-9 to ICD-10 along with a set of five flags that specify the mapping of the data. 
-Difficulties: Differences in format of codes, specificity of codes, and one to many mapping.
-Limitation: GEM codes are currently only mapping ICD-9 diagnosis codes only (not procedure codes).
+Using 2018 ICD-9 GEM mapping from CMS (https://www.cms.gov/Medicare/Coding/ICD10/2018-ICD-10-CM-and-GEMs.html), which provides broad mapping of ICD-9 to ICD-10 along with a set of five flags that specify the mapping of the data, to allow for conversion between ICD-9 and ICD-10 diagnosis codes for research and/or analysis. Limitation: GEM codes are currently only mapping ICD-9 diagnosis codes only (not procedure codes).
 
 # Software Flowchart
 ![Flowchart](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/Updated_Flowchart.png "Flowchart")
 
 ## Workflow 
-Required packages: icd
-Inputs: a) 2018_I9gem.txt (list of ICD-9 to ICD-10 gem mappings) and 2) dataset with your ICD-9 code(s) in a column to be mapped.
+Required packages: ```icd``` (https://github.com/jackwasey/icd)
+
+Required inputs: a) GEM.Rds (list of ICD-9 to ICD-10 gem mappings) and 2) dataset with your ICD-9 code(s) in a column to be mapped.
 
 - [x] Step 1: Data cleaning/processing:
 
-    - [x] Step 1a: Determine if codes being mapped are in ICD-9 or ICD-10 (icd function: guess_version). 
+    - [x] Step 1a: Determine if codes being mapped are in ICD-9 or ICD-10 (```guess_version```). 
     
     - [x] Step 1b: Take only the ICD-9 subset.
 
-    - [x] Step 1c: Determine if ICD-9 codes are in short or decimal format (icd hidden function: icd:::guess_short).
+    - [x] Step 1c: Determine if ICD-9 codes are in short or decimal format (```icd:::guess_short```).
 
-    - [x] Step 1d: Convert all ICD-9 codes to short format (icd function: decimal_to_short).
+    - [x] Step 1d: Convert all ICD-9 codes to short format (```decimal_to_short```).
 
-- [x] Step 2: Using GEM, function converts ICD-9 to ICD-10 (written function: findICD10). 
+- [x] Step 2: Using GEM, function converts ICD-9 to ICD-10 (```findICD10```). 
 
 Step 3: ICD-10 has many more codes than ICD-9 and the GEM map prioritizes based on specificity. 
 
