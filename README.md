@@ -23,21 +23,23 @@ Limitation: GEM codes are currently only mapping ICD-9 diagnosis codes only (not
 Required packages: icd
 Inputs: a) 2018_I9gem.txt (list of ICD-9 to ICD-10 gem mappings) and 2) dataset with your ICD-9 code(s) in a column to be mapped.
 
-Step 1: Data cleaning/processing:
+- [x] Step 1: Data cleaning/processing:
 
-    Step 1a: Determine if codes being mapped are in ICD-9 or ICD-10 (icd function: guess_version). 
+    - [x] Step 1a: Determine if codes being mapped are in ICD-9 or ICD-10 (icd function: guess_version). 
     
-    Step 1b: Take only the ICD-9 subset.
+    - [x] Step 1b: Take only the ICD-9 subset.
 
-    Step 1c: Determine if ICD-9 codes are in short or decimal format (icd hidden function: icd:::guess_short).
+    - [x] Step 1c: Determine if ICD-9 codes are in short or decimal format (icd hidden function: icd:::guess_short).
 
-    Step 1d: Convert all ICD-9 codes to short format (icd function: decimal_to_short).
+    - [x] Step 1d: Convert all ICD-9 codes to short format (icd function: decimal_to_short).
 
-Step 2: Using GEM, function converts ICD-9 to ICD-10 (written function: findICD10). 
+- [x] Step 2: Using GEM, function converts ICD-9 to ICD-10 (written function: findICD10). 
 
 Step 3: ICD-10 has many more codes than ICD-9 and the GEM map prioritizes based on specificity. 
 
-    Step 3a: Following ICD-10 conversion, pull up all potential children codes (more specific) from the GEM-specified parent code (less specific). 
+    Step 3a: Output ICD-10 codes one per row
+    
+    Step 3b: Following ICD-10 conversion, pull up all potential children codes (more specific) from the GEM-specified parent code (less specific). 
 
     Step 3b: Also based on flags, give the correct combinations of ICD-10 codes that are relevent.
 
