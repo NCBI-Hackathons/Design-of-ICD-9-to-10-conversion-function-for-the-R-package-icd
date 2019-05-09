@@ -17,7 +17,7 @@ convertICD9toICD10 <- function(icd, D) {
       return(icd.converted)                 # return the converted icd9 to icd10
     } # if short or decimal 
     else {                                  # for decimal format
-      icd.coverted <- decimal_to_short(icd) # converts decimal to short
+      icd.converted <- decimal_to_short(icd) # converts decimal to short
       icd.converted <- findICD10B(icd.converted, D)  # converts icd9 to icd10
       return(icd.converted)                 # return the converted icd9 to icd10
     } # else short or decimal
