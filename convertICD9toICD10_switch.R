@@ -1,5 +1,6 @@
 ### this function returns possible icd10
 convertICD9toICD10 <- function(icd) {
+  icd <- as.character(icd)
   icd.version <- guess_version(icd)
   icd.format <- icd:::guess_short(icd)
   icd.new <- paste0(icd.version,icd.format,sep = "")
