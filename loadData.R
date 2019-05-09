@@ -11,4 +11,4 @@ for (i in 1:5){
   names(GEM)[i+3] <- colNames[i]
 }
 
-
+saveRDS(GEM, 'GEM.RDS')
