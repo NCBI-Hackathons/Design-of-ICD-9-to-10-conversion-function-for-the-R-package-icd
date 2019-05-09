@@ -5,5 +5,10 @@ findICD10 <- function(ICD9code, children = F) {
   ## Rows that have that ICD9code
   rows <- which(GEM[, 1] == as.character(ICD9code)) 
   ## The ICD10 and flags for those rows
-  return(GEM[rows,c(2, 4:8)])
+  if (!length(rows)) {
+    return(data.frame(ICD10 = NA))
+  }
+  else {
+    return(GEM[rows,c(2, 4:8)])  
+  }
 }
