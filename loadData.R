@@ -7,7 +7,7 @@ GEM <- read.table("2018_I9gem.txt",
 # Extracting flags 
 for (i in 1:5){
   colNames <- c('approximate','noMap','combination','scenario','choicelist')
-  test[,i+3] <- as.integer(substring(test[,3],i,i))
+  GEM[,i+3] <- as.integer(substring(test[,3],i,i))
   names(test)[i+3] <- colNames[i]
 }
 
