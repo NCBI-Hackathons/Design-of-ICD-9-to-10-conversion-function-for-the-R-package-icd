@@ -4,7 +4,7 @@
 ## D (conversion data) and outputs
 ## the ICD9code also do you want children
 
-findICD10B <- function(ICD9code, GEM, children = F) {
+findICD10B <- function(ICD9code, children = F) {
   
   ## Rows that have that ICD9code
   rows <- which(GEM[, "ICD9"] == ICD9code)
