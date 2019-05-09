@@ -9,6 +9,7 @@
     - Gwynn Sturdevant (nzgwynn@gmail.com)
     - Regina Umarova (regina.umarova@nih.gov)
     - Elaine Lai (elaine.lai@nih.gov)
+    - Jack Wasey (jack@jackwasey.com)
 
 ### Introduction
 The International Statistical Classification of Diseases and Related Health Problems (ICD) is a medical classification list by the World Health Organization (WHO) used around the world. Every medical visit is associated with one or more ICD codes. ICD codes are regularly used by medical billing, insurance, and epidemiologists to track and evaluate diseases and health problems across the world.  
