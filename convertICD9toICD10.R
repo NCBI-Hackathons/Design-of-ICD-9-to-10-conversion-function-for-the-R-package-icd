@@ -6,7 +6,10 @@ codes <- read.table("./2018_I9gem.txt", header = T,
                     colClasses = "character")
 colnames(codes) <- c("ICD9", "ICD10", "flag")
 
-### this function returns posiible icd10
+#######################################################################################
+####          convertICD9toICD10 function
+######################################################################################
+### this function returns possible icd10
 convertICD9toICD10 <- function(icd, D) {
   icd.version <- guess_version(icd)
   
