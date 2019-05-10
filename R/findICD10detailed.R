@@ -1,7 +1,10 @@
+#Load GEM data
+GEM <- readRDS('GEM.RDS') 
+
 ## Detailed findICD10 function 
 
 findICD10 <- function(ICD9code) {
-  GEM <- readRDS('GEM.RDS') #Load GEM data
+
   ## Rows that have that ICD9code
   rows <- which(GEM[, 1] == as.character(ICD9code)) 
   ## The ICD10 and flags for those rows
