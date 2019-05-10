@@ -1,6 +1,6 @@
 # ConvertICD9toICD10
 
-##convertICD9toICD10(data$var)
+## convertICD9toICD10(data$var)
 
 Many multi-year electronic health record datasets have both ICD-9 and ICD-10 codes. This can make analysis of comorbidities or other diagnoses complicated, as both code sets must be considered without double-counting diagnoses within a patient. It would be helpful to have all codes in the same revision instance. This function will convert ICD-9 codes to their associated ICD-10 codes. As many of the codes do not result in a one-to-one match, the resulting data frame will have more rows than the input data. The function requires input of short ICD-9 codes. If your codes are in decimal format, you must first convert them to short format (which can be done using the decimal_to_short function in this package). Attempting to input a decimal form variable will result in an error. 
 
