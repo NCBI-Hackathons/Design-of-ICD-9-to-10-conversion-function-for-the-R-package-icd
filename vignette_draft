@@ -23,6 +23,3 @@ data <- convertICD9toICD10(data$var)
 
 The default function will return all ICD-10 codes associated with ICD-9 codes in your data. You can also add arguments for reporting CMS conversion flags. 
 data<-convertICD9toICD10(data$var, flag=TRUE)
-
-
-*may need to convert data to “attribute” icd9 type – but beware because it will convert both ICD-9 and ICD-10 to icd9. The guess_version function will also call 
