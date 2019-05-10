@@ -32,7 +32,7 @@ DecisionTree <- function(ICD9code){
                                                length(x[,1])),
                                  ICD10 = x[,1]))
     names(x)[5:6] <- c("Scenario", "Choice_list")
-    FlagsOut <- cbind2(FlagsOut, x[,CombCols])
+    FlagsOut <- cbind2(FlagsOut, x[,c(5:6)])
   }
   return(FlagsOut)
 }
