@@ -23,7 +23,7 @@ In 2015, the United States transitioned from the 9th revision (ICD-9) to the 10t
 This means that legacy datasets have ICD codes in one format while post-2015 data is coded differently. Being able to easily convert between these two ICD systems will allow for easy combination and analysis of these datasets. We propose to perform this conversion using General Equivalence Mappings (GEMs) proposed by the Centers for Medicare & Medicaid Services (CMS).
 
 ### Project Goals
-Using 2018 ICD-9 GEM mapping from CMS (https://www.cms.gov/Medicare/Coding/ICD10/2018-ICD-10-CM-and-GEMs.html), which provides broad mapping of ICD-9 to ICD-10 along with a set of five flags that specify the mapping of the data, to allow for conversion between ICD-9 and ICD-10 diagnosis codes for research and/or analysis. Limitation: GEM codes are currently only mapping ICD-9 diagnosis codes only (not procedure codes).
+Using 2018 ICD-9 General Equivalence Mapping (GEM) from CMS (https://www.cms.gov/Medicare/Coding/ICD10/2018-ICD-10-CM-and-GEMs.html), which provides broad mapping of ICD-9 to ICD-10 along with a set of five flags that specify the mapping of the data, to allow for conversion between ICD-9 and ICD-10 diagnosis codes for research and/or analysis. Limitation: GEM codes are currently only mapping ICD-9 diagnosis codes only (not procedure codes).
 
 # Software Flowchart
 ![Flowchart](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/Updated_Flowchart.png "Flowchart")
@@ -31,7 +31,7 @@ Using 2018 ICD-9 GEM mapping from CMS (https://www.cms.gov/Medicare/Coding/ICD10
 ### Workflow 
 Required packages: ```icd``` (https://github.com/jackwasey/icd). Currently designed for icd v4.0.6, R (≥ 3.4).
 
-Required inputs: a) GEM.Rds (list of ICD-9 to ICD-10 gem mappings) and 2) dataset with your ICD-9 code(s) in a column to be mapped.
+Required inputs: a) ```GEM.Rds``` (list of ICD-9 to ICD-10 GEM mappings) and 2) dataset with your ICD-9 code(s) in a column to be mapped.
 
 - [x] Step 1: Data cleaning/processing:
 
