@@ -53,9 +53,9 @@ Required inputs: a) GEM.Rds (list of ICD-9 to ICD-10 gem mappings) and 2) datase
     
     - [in progress] Step 3c: Merge ICD-10 codes back to original dataset, adding rows when necessary.
 
-###
+### Vignette
 
-Vignette (```convertICD9.md```)
+Please see out [vignette](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/convertICD.md) for examples of data structures and input/output formats (```convertICD9.md```)
 
 ### Lessons Learned
 
