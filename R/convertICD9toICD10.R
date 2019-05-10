@@ -1,3 +1,19 @@
+require(icd)
+
+### this function returns possible icd10
+convert <- function(icd) {
+  icd.version <- guess_version(icd)
+  switch(icd.version,
+         "icd9" = return(findICD10(icd)),
+         "icd10" = return(c(icd))
+  )
+} # convert function
+
+# Load data
+source("loadData.R")
+source("findICD10detailed.R")
+source("flagDecisionTree.R")
+
 convertICD9toICD10 <- function(icd.table, flag=FALSE) {             # function
   output <- setNames(data.frame(matrix(ncol=2,nrow=0)),
                      c('ICD_input','ICD10'))
@@ -33,11 +49,4 @@ convertICD9toICD10 <- function(icd.table, flag=FALSE) {             # function
   } # else
 } # convertICD9to ICD10 function 
 
-### this function returns possible icd10
-convert <- function(icd) {
-  icd.version <- guess_version(icd)
-  switch(icd.version,
-         "icd9" = return(findICD10(icd)),
-         "icd10" = return(c(icd))
-  )
-} # convert function
+
