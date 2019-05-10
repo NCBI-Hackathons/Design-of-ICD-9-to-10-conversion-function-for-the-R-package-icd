@@ -55,7 +55,7 @@ Required inputs: a) GEM.Rds (list of ICD-9 to ICD-10 gem mappings) and 2) datase
 
 ### Vignette
 
-Please see out [vignette](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/convertICD.md) for examples of data structures and input/output formats (```vignette(convertICD9.md)```)
+Please see out [vignette](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/convertICD.md) for examples of data structures and input/output formats (```vignette("convertICD9.md")```)
 
 ### Lessons Learned
 
