@@ -33,7 +33,7 @@ Required packages: ```icd``` (https://github.com/jackwasey/icd) and dependencies
 
 ### Required Inputs
 
-    1) List of ICD-9 to ICD-10 GEM mappings: ```GEM.Rds```
+    1) List of ICD-9 to ICD-10 GEM mappings: GEM.Rds
 
     2) Dataset with your ICD-9 code(s) in a column to be mapped
 
