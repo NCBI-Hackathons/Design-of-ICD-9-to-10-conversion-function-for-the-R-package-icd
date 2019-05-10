@@ -11,27 +11,25 @@ convertICD9toICD10 <- function(icd.table, flag=FALSE) {             # function
   } # if statement
   
   else {
-    output <- cbind(output, setNames(data.frame(matrix(ncol=3,nrow=0)),
-                                     c('Details','Scenario','Choice_list')))
-    #print(output)
-    
-     for (i in icd.table){
-       icd.converted = convert(i)
-       #print(icd.converted)
-       output <- rbind(output, data.frame(ICD_input=i,ICD10=icd.converted[1],Details=NA,
-                                          Scenario=NA,Choice_list=NA))
-       print(output)
-       flag.version <- guess_version(i)
-       if (flag.version == "icd9") {
-         flags <<- DecisionTree(i)
-         #print(flags)
-       } # if
-       
-       #output <- merge(output, flags, sort=FALSE)
-       print(output)
-     } # for loop
-     #return(output)
-     
+    flags <- setNames(data.frame(matrix(ncol=4,nrow=0)),
+                   c('ICD10','Details','Scenario','Choice_list'))
+    for (i in icd.table){
+      icd.converted = convert(i)
+      #print(icd.converted)
+      output <- rbind(output, data.frame(ICD_input=i,ICD10=icd.converted[1]))
+      flag.version <- guess_version(i)
+      if (flag.version == "icd10") {
+        flags <- rbind(flags, data.frame(ICD10 = i, Details = "Already ICD10",
+                                         Scenario = NA, Choice_list = NA))
+      } else {
+        flag <- DecisionTree(i, short = F)
+        flags <- rbind(flags, flag)
+      }
+    } # for loop
+    outputFinal <- merge(output, flags, by='ICD10')
+    ifelse(all(is.na(outputFinal$Scenario)),
+           return(outputFinal[c(2,1,3)]),
+           return(outputFinal[c(2,1,3:5)]))
   } # else
 } # convertICD9to ICD10 function 
 
