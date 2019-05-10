@@ -28,11 +28,16 @@ Using 2018 ICD-9 General Equivalence Mapping (GEM) from CMS (https://www.cms.gov
 # Software Flowchart
 ![Flowchart](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/Updated_Flowchart.png "Flowchart")
 
+### Requirements
+Required packages: ```icd``` (https://github.com/jackwasey/icd) and dependencies. Currently designed for icd v4.0.6, R (≥ 3.4).
+
+### Required Inputs
+
+    1) List of ICD-9 to ICD-10 GEM mappings: ```GEM.Rds```
+
+    2) Dataset with your ICD-9 code(s) in a column to be mapped
+
 ### Workflow 
-Required packages: ```icd``` (https://github.com/jackwasey/icd). Currently designed for icd v4.0.6, R (≥ 3.4).
-
-Required inputs: a) ```GEM.Rds``` (list of ICD-9 to ICD-10 GEM mappings) and 2) dataset with your ICD-9 code(s) in a column to be mapped.
-
 - [x] Step 1: Data cleaning/processing:
 
     - [x] Step 1a: Determine if codes being mapped are in ICD-9 or ICD-10 (```guess_version()```). 
