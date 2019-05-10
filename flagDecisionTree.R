@@ -11,7 +11,7 @@ DecisionTree <- function(ICD9code){
                          c("Details", "ICD10"))
   }
   ### Decision tree 
-  if (is.na(x[,1])) {           # If ICD9 not found
+  if (unique(is.na(x[,1]))) {   # If ICD9 not found
     FlagsOut <- rbind(FlagsOut, 
                       data.frame(Details = "ICD9 Code not found", ICD10 = NA))
   } else if (!unique(x[,2])) {  # If exact match
@@ -26,11 +26,13 @@ DecisionTree <- function(ICD9code){
                                                length(x[,1])), 
                                  ICD10 = x$ICD10))
   } else {                      # Then is a combination of codes
+    x <- x[order(x[,5], x[,6]),]
     FlagsOut <- rbind(FlagsOut, 
                       data.frame(Details = rep("Combination", 
                                                length(x[,1])),
                                  ICD10 = x[,1]))
-    FlagsOut <- cbind2(FlagsOut, x[,5:6])
+    names(x)[5:6] <- c("Scenario", "Choice_list")
+    FlagsOut <- cbind2(FlagsOut, x[,CombCols])
   }
-  return(out)
+  return(FlagsOut)
 }
