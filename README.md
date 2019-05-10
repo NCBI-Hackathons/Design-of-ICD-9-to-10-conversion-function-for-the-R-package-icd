@@ -29,7 +29,7 @@ Using 2018 ICD-9 GEM mapping from CMS (https://www.cms.gov/Medicare/Coding/ICD10
 ![Flowchart](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/Updated_Flowchart.png "Flowchart")
 
 ### Workflow 
-Required packages: ```icd``` (https://github.com/jackwasey/icd)
+Required packages: ```icd``` (https://github.com/jackwasey/icd). Currently designed for icd v4.0.6, R (≥ 3.4).
 
 Required inputs: a) GEM.Rds (list of ICD-9 to ICD-10 gem mappings) and 2) dataset with your ICD-9 code(s) in a column to be mapped.
 
