@@ -59,7 +59,8 @@ Please see out [vignette](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-
 
 ### Lessons Learned
 
-- We need to distinguish between multiple data versions (ICD-9 vs. 10) as well as multiple data formats (short vs. decimal). 
-    - Many of the built-in functions are not set up for vectorization, which means the code may run slowly. 
-    - We tried to optimize our functions while still including to ability to check which data version and format and also convert based       on a logical structure. 
+- Building a function into an existing package, while trying to adhere to the original structure and package dependencies is hard.
+- We need to distinguish between multiple data versions (ICD-9 vs. 10) as well as multiple data formats (short vs. decimal).
+    - We tried to optimize our functions while still including to ability to check which data version and format and also convert based       on a logical structure, which also slows down the function.
+- Many of the built-in functions (from icd package) are not set up for vectorization, which means the code may run slowly on large data. 
 - In the future, use of tidyverse packages as well as parallelization would improve performance in larger datasets.
