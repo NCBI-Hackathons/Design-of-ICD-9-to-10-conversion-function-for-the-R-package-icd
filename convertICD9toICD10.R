@@ -14,11 +14,11 @@ convertICD9toICD10 <- function(icd) {
     
     # check whether it's short or decimal
     if (icd:::guess_short(icd)){
-      return(findICD10(icd))                          # return the converted icd9 to icd10
+      return(findICD10B(icd))                          # return the converted icd9 to icd10
     }                                                 # if short or decimal 
     else {                                            # for decimal format
       icd.converted <- decimal_to_short(icd)          # converts decimal to short
-      return(findICD10(icd.converted))                # return the converted icd9 to icd10
+      return(findICD10B(icd.converted))                # return the converted icd9 to icd10
     }                                                 # else short or decimal
   }                                                   # if icd9 or icd10
   else {                                              # "icd10"  
