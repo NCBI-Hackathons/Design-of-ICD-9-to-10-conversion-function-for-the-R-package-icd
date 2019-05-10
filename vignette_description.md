@@ -28,3 +28,21 @@ The default function will return all ICD-10 codes associated with ICD-9 codes in
 ```
 data<-convertICD9toICD10(data$var, flag=TRUE)
 ```
+
+Input data:
+```
+PATIENTID   ICD9
+Patient1    0730
+Patient2    75435
+```
+
+Output data:
+```
+PATIENT ID  ICD9    ICD10
+Patient1    0730    A70
+Patient1    0730    J17
+Patient2    75435   Q6501
+Patient2    75435   Q6502
+Patient2    75435   Q6531
+Patient2    75435   Q6532
+```
