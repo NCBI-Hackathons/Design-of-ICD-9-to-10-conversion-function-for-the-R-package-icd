@@ -43,15 +43,19 @@ Required inputs: a) GEM.Rds (list of ICD-9 to ICD-10 gem mappings) and 2) datase
 
     - [x] Step 1d: Convert all ICD-9 codes to short format (```decimal_to_short```).
 
-- [x] Step 2: Using GEM, function converts ICD-9 to ICD-10 (```findICD10```). 
+- [x] Step 2: Using GEM, function converts ICD-9 to ICD-10 (```findICD10``` and ```convertICD9toICD10```). 
 
-Step 3: ICD-10 has many more codes than ICD-9 and the GEM map prioritizes based on specificity. 
+- [in progress] Step 3: ICD-10 has many more codes than ICD-9 and the GEM map prioritizes based on specificity. 
 
-    Step 3a: Output ICD-10 codes one per row
+    - [x] Step 3a: Output ICD-10 codes one per row
     
-    Step 3b: Following ICD-10 conversion, pull up all potential children codes (more specific) from the GEM-specified parent code (less specific). 
+    - [x] Step 3b: Output flags for ICD-10 codes when desired (```convertICD9toICD10(flag=TRUE)```)
+    
+    - [in progress] Step 3c: Merge ICD-10 codes back to original dataset, adding rows when necessary.
 
-    Step 3c: Also based on flags, give the correct combinations of ICD-10 codes that are relevent.
+###
+
+Vignette (```convertICD9.md```)
 
 ### Lessons Learned
 
