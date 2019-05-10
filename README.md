@@ -35,15 +35,15 @@ Required inputs: a) GEM.Rds (list of ICD-9 to ICD-10 gem mappings) and 2) datase
 
 - [x] Step 1: Data cleaning/processing:
 
-    - [x] Step 1a: Determine if codes being mapped are in ICD-9 or ICD-10 (```guess_version```). 
+    - [x] Step 1a: Determine if codes being mapped are in ICD-9 or ICD-10 (```guess_version()```). 
     
-    - [x] Step 1b: Take only the ICD-9 subset.
+    - [x] Step 1b: Take only the ICD-9 for next steps via decision tree.
 
-    - [x] Step 1c: Determine if ICD-9 codes are in short or decimal format (```icd:::guess_short```).
+    - [x] Step 1c: Determine if ICD-9 codes are in short or decimal format (```icd:::guess_short()```).
 
-    - [x] Step 1d: Convert all ICD-9 codes to short format (```decimal_to_short```).
+    - [x] Step 1d: Convert all ICD-9 codes to short format (```decimal_to_short()```).
 
-- [x] Step 2: Using GEM, function converts ICD-9 to ICD-10 (```findICD10``` and ```convertICD9toICD10```). 
+- [x] Step 2: Using GEM, function converts ICD-9 to ICD-10 (```findICD10()``` and ```convertICD9toICD10()```). 
 
 - [in progress] Step 3: ICD-10 has many more codes than ICD-9 and the GEM map prioritizes based on specificity. 
 
@@ -55,7 +55,7 @@ Required inputs: a) GEM.Rds (list of ICD-9 to ICD-10 gem mappings) and 2) datase
 
 ### Vignette
 
-Please see out [vignette](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/convertICD.md) for examples of data structures and input/output formats (```convertICD9.md```)
+Please see out [vignette](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/convertICD.md) for examples of data structures and input/output formats (```vignette(convertICD9.md)```)
 
 ### Lessons Learned
 
