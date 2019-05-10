@@ -1,6 +1,10 @@
 # R function to convert ICD-9 to ICD-10
 
-## Project goals: Develop a function to be incorporated into the R package 'icd' that will convert International Classification of Diseases codes from Ninth to Tenth revisions
+![build_language_count](https://img.shields.io/github/languages/count/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd.svg "build language count")
+
+#### Project goals: Develop a function to be incorporated into the R package 'icd' that will convert International Classification of Diseases codes from Ninth to Tenth revisions
+
+Keywords: ICD, billing code, hospital billing code, International Classification of Diseases codes, diagnosis, comorbidity, comorbidities, ICD-9, ICD-10
 
     Authors: 
     - Emily Ricotta (Team Lead, emily.ricotta@nih.gov)
