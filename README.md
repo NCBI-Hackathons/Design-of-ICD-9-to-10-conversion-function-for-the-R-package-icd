@@ -1,6 +1,6 @@
 # R function to convert ICD-9 to ICD-10
 
-![build_language_count](https://img.shields.io/github/languages/count/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd.svg "build language count")
+![build_language_count](https://img.shields.io/github/languages/count/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd.svg "build language count") ![forks_count](https://img.shields.io/github/forks/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd.svg "forks count") ![stars_count](https://img.shields.io/github/stars/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd.svg "star count") ![license](https://img.shields.io/github/license/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd.svg "license")
 
 #### Project goals: Develop a function to be incorporated into the R package 'icd' that will convert International Classification of Diseases codes from Ninth to Tenth revisions
 
