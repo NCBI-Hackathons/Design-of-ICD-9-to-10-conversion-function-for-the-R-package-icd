@@ -1,0 +1,40 @@
+#Option 1 - Long format
+
+##Input data:
+  PATIENTID	   ICD9
+  Patient1	   0730
+  Patient2	  75435
+
+##Output data:
+  PATIENTID	   ICD9	  ICD10	  FLAG
+  Patient1	   0730	    A70	  “combination” #This will specify that the ICD conversion was not a 1 to 1 match
+  Patient1	   0730	    J17	  “combination” 
+  Patient2	  75435	  Q6501	  “combination”
+  Patient2	  75435	  Q6502	  “combination”
+  Patient2	  75435	  Q6531	  “combination”
+  Patient2	  75435	  Q6532	  “combination”
+
+###This gives you a row for each new ICD code.
+
+#Option 2a - Wide format, complete concatenation 
+
+##Input data:
+  PATIENTID	 ICD9
+  Patient1	 0730
+  Patient2	75435
+  
+##Output data:
+  PATIENTID	   ICD9	  ICD10
+  Patient1	   0730	  (A70, J17)
+  Patient2	  75435	  (Q6501, Q6502, Q6531, Q6532)
+ 
+### This gives you one row per patient, with all converion codes in one new column
+
+#Option 2b - Wide format, combination concatenation 
+
+##Output data:
+  PATIENTID	   ICD9	  ICD10_1         ICD10_2
+  Patient1	   0730	  (A70, J17)      <NA>
+  Patient2	  75435	  (Q6501, Q6531)  (Q6502, Q6532)
+
+## This gives you one row per patient, with all combinations (i.e. code AND code OR code) in unique new columns
