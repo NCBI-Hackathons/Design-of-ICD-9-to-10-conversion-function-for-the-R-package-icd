@@ -9,6 +9,6 @@ findICD10 <- function(ICD9code, children = F) {
     return(data.frame(ICD10 = NA))
   }
   else {
-    return(GEM[rows,c(1:2, 4:8)])  
+    return(GEM[rows,c(2, 4:8)])  
   }
 }
