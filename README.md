@@ -1,4 +1,5 @@
-# R function to convert ICD-9 to ICD-10
+# FANI-Pack (Find All New ICDs Package) 
+## R functions to convert ICD-9 to ICD-10
 
 ![build_language_count](https://img.shields.io/github/languages/count/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd.svg "build language count") ![forks_count](https://img.shields.io/github/forks/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd.svg "forks count") ![stars_count](https://img.shields.io/github/stars/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd.svg "star count") ![license](https://img.shields.io/github/license/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd.svg "license")
 
@@ -28,11 +29,16 @@ Using 2018 ICD-9 General Equivalence Mapping (GEM) from CMS (https://www.cms.gov
 # Software Flowchart
 ![Flowchart](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-10-conversion-function-for-the-R-package-icd/blob/master/Updated_Flowchart.png "Flowchart")
 
+### Requirements
+Required packages: ```icd``` (https://github.com/jackwasey/icd) and dependencies. Currently designed for icd v4.0.6, R (≥ 3.4).
+
+### Required Inputs
+
+    1) List of ICD-9 to ICD-10 GEM mappings: GEM.Rds
+
+    2) Dataset with your ICD-9 code(s) in a column to be mapped
+
 ### Workflow 
-Required packages: ```icd``` (https://github.com/jackwasey/icd). Currently designed for icd v4.0.6, R (≥ 3.4).
-
-Required inputs: a) ```GEM.Rds``` (list of ICD-9 to ICD-10 GEM mappings) and 2) dataset with your ICD-9 code(s) in a column to be mapped.
-
 - [x] Step 1: Data cleaning/processing:
 
     - [x] Step 1a: Determine if codes being mapped are in ICD-9 or ICD-10 (```guess_version()```). 
@@ -59,4 +65,8 @@ Please see out [vignette](https://github.com/NCBI-Hackathons/Design-of-ICD-9-to-
 
 ### Lessons Learned
 
-We need to distinguish between multiple data versions (ICD-9 vs. 10) as well as multiple data formats (short vs. decimal). However, many of the built-in functions are not set up for vectorization, which means the code may run slowly. We have tried to optimize our functions while still including to ability to check which data version and format and also convert based on a logical structure. In the future, use of tidyverse packages as well as parallelization would improve performance in larger datasets.
+- Building a function into an existing package, while trying to adhere to the original structure and package dependencies is hard.
+- We need to distinguish between multiple data versions (ICD-9 vs. 10) as well as multiple data formats (short vs. decimal).
+    - We tried to optimize our functions while still including to ability to check which data version and format and also convert based       on a logical structure, which slows down the function.
+- Many of the built-in functions (from icd package) are not set up for vectorization, which also slows down the function, especially on large data. 
+- In the future, use of tidyverse packages as well as parallelization would improve performance in larger datasets.

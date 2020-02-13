@@ -21,12 +21,6 @@ visit_id   age_group    sex death  DRG   DX1   DX2   DX3   DX4   DX5   DX6   DX7
 
 
 data <- convertICD9toICD10(data$var)
-````
-
-The default function will return all ICD-10 codes associated with ICD-9 codes in your data. You can also add arguments for reporting CMS conversion flags. 
-
-```
-data<-convertICD9toICD10(data$var, flag=TRUE)
 ```
 
 Input data:
@@ -45,4 +39,29 @@ Patient2    75435   Q6501
 Patient2    75435   Q6502
 Patient2    75435   Q6531
 Patient2    75435   Q6532
+````
+
+The default function will return all ICD-10 codes associated with ICD-9 codes in your data. You can also add arguments for reporting CMS conversion flags. 
+
 ```
+data<-convertICD9toICD10(data$var, flag=TRUE)
+```
+
+Input data:
+```
+PATIENTID   ICD9
+Patient1    0730
+Patient2    75435
+```
+
+Output data:
+```
+PATIENT ID  ICD9    ICD10   approximate   noMap  combination   scenario      choicelist
+Patient1    0730    A70     1             0      1             1             1
+Patient1    0730    J17     1             0      1             1             2
+Patient2    75435   Q6501   1             0      1             1             1
+Patient2    75435   Q6502   1             0      1             2             1
+Patient2    75435   Q6531   1             0      1             2             2
+Patient2    75435   Q6532   1             0      1             1             2
+```
+
